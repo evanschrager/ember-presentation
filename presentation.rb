@@ -5,27 +5,31 @@ presentation 'EmberJS-and-Rails-2.0' do
   slide "EmberJS" do
     point "A Framework for Creating Ambitious Web Applications"
     image "fire.gif"
-    note "An All-Inclusive JavaScript MVC Framework"
+    note " the web derives its power from the ability to bookmark and share URLs. Ember marries the tools and concepts of native GUI frameworks with support for the feature that makes the web so powerful: the URL."
   end
 
   slide "EmberJS" do
     image "ember_diagram.png"
-    note "Models rely on AJAX callbacks in routes or Ember Data (backend)-----Routes/URL query the model from their model hook, to make it available in the controller and in the template-----Controllers get generated automatically if you dont generate them-----views (unique situations)-----component is reusable code, isolated from other views-----template is the HTML markup, most comparable to VIEWS in Rails-----Helpers = methods you can throw inside handlebars-----COMPONENTS? HELPERS? VIEWS? HELP!"
-  end
-
-  slide "The Run Loop" do
-    image "expensive.png"
-    image "queues.png"
-    note "The sync queue contains binding synchronization jobs-----
-The actions queue is the general work queue and will typically contain scheduled tasks e.g. promises-----
-The routerTransitions queue contains transition jobs in the router-----
-The render queue contains jobs meant for rendering, these will typically update the DOM-----
-The afterRender contains jobs meant to be run after all previously scheduled render tasks are complete. This is often good for 3rd-party DOM manipulation libraries, that should only be run after an entire tree of DOM has been updated-----
-The destroy queue contains jobs to finish the teardown of objects other jobs have scheduled to destroy-----"
+    image "ember_create.png"
+    note "Ember app uses URLs to represent every possible state in your application--In Ember, every route has an associated model-- routes query the model from their model hook, to make it available in the controller and in the template-----Controllers store application state, and they get generated automatically if you dont generate them-----views (unique situations)-----component is reusable code, isolated from other views-----template is the HTML markup, most comparable to VIEWS in Rails-----Helpers = methods you can throw inside handlebars-----COMPONENTS? HELPERS? VIEWS? HELP! -------- creation gets you application namespace, adds event listeners to the document, delegates events to views, renders application template, creates a router"
   end
 
   slide "Rails" do
     image "rails_diagram.png"
+  end
+
+  slide "The Run Loop" do
+    image "queues.png"
+    image "run_loop.png"
+    note "Scenarios where you need to understand run loop= AJAX callbacks,
+          DOM update and event callbacks,
+          Websocket callbacks,
+          setTimeout and setInterval callbacks,
+          postMessage and messageChannel event handlers"
+  end
+
+  slide "Efficiency Example" do
+    image "ember-performance.png"
   end
 
   slide "Ember - Pros and Cons" do
@@ -69,7 +73,7 @@ The destroy queue contains jobs to finish the teardown of objects other jobs hav
   slide "The Innovator's Dilemma" do
     point "Rails - 80%"
     point "Highly interactive, app-like experiences - 20%"
-    # successful companies can put too much emphasis on customers' current needs, and fail to adopt new technology or business models that will meet their customers' unstated or future needs. 
+    note "successful companies can put too much emphasis on customers' current needs, and fail to adopt new technology or business models that will meet their customers' unstated or future needs."
   end
 
   slide "Questions?" do
